@@ -1,0 +1,10 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|images|css|temp|js|video_files|robots\.txt|favicon\.ico)
+RewriteRule ^(.*)$ /index.php/$1 [L]
+SetEnv CI_ENV development
+<Files "*.tpl">
+Order Allow,Deny
+Deny from All
+</Files>
